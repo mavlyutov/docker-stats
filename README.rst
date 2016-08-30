@@ -53,8 +53,8 @@ Raw output of docker-stats is smth like this:
         }
     }
 
-As one can mention, there are an array object inside key :code:`io_service_bytes_recursive` and each element of that array is denormalized JSON with key inside values.
-docker-stats tries to jsonify that to:
+As one can mention, there are an array object inside key :code:`io_service_bytes_recursive` and each element of that array is flattened JSON with key :code:`op` within values.
+docker-stats called with key :code:`--normalize` tries to jsonify that to:
 
 .. code-block:: javascript
 
