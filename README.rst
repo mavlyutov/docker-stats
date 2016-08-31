@@ -53,26 +53,26 @@ Raw output of docker-stats is smth like this:
         }
     }
 
-As one can mention, there are an array object inside key :code:`io_service_bytes_recursive` and each element of that array is flattened JSON with key :code:`op` within values.
+As one can mention, there are an array object inside key :code:`io_service_bytes_recursive` and each element of that array is flattened JSON with key :code:`op` within values. That behaviour may occur in other keys.
 docker-stats called with key :code:`--normalize` tries to jsonify that to:
 
 .. code-block:: javascript
 
     {
-        "canvas_nginx": {
+        "my_container": {
             "blkio_stats": {
                 "io_merged_recursive": [],
                 "io_queue_recursive": [],
                 "io_service_bytes_recursive": {
-                    "Async": {
-                        "major": 253,
-                        "minor": 5,
-                        "value": 7020544
-                    },
                     "Read": {
                         "major": 253,
                         "minor": 5,
                         "value": 7020544
+                    },
+                    "Write": {
+                        "major": 253,
+                        "minor": 5,
+                        "value": 0
                     },
                     *SNIP*
                 }
