@@ -6,7 +6,7 @@ from setuptools import setup
 if __name__ == '__main__':
     setup(
         name='docker-stats',
-        version='0.0.1',
+        version='0.0.2',
 
         license='Apache License, Version 2.0',
         author="Marat Mavlyutov",
