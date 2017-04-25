@@ -6,8 +6,7 @@ from setuptools import setup
 if __name__ == '__main__':
 
     requirements = [
-        'docker-py <= 1.10.6',
-        'json'
+        'docker-py <= 1.10.6'
     ]
 
     setup(
