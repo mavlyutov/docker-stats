@@ -28,7 +28,7 @@ def normalize(dictionary):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='docker stats, json way')
+    parser = argparse.ArgumentParser(description='Docker stats wrapper which prints output in json')
     parser.add_argument('containers', metavar='container', type=str, nargs='*', help='IDs or NAMEs of desired containers')
     parser.add_argument('-a', '--all', dest='all', action='store_true', help='get stats of all available containers')
     parser.add_argument('-n', '--normalize', dest='normalize', action='store_true', help='try to normalize stats')
