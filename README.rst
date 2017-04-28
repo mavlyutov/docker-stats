@@ -20,6 +20,7 @@ Install from PyPI and run ::
           -h, --help  show this help message and exit
           -a, --all   get stats of all available containers
           -n, --normalize   try to normalize stats
+          -N, --names   return containers names instead of Ids with replacing non-digit and non-word symbols to underscores
 
 
 Normalization
