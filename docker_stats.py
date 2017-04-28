@@ -34,7 +34,7 @@ def container_name(id):
     """
 
     client = docker.Client(base_url='unix://var/run/docker.sock', version='auto')
-    return re.sub('[^\w]', '_', client.inspect_container['Name'])
+    return re.sub('[^\w]', '_', re.sub('^/', '', client.inspect_container(id)['Name']))
 
 
 def main():
