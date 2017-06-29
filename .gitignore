@@ -2,3 +2,4 @@
 build/
 dist/
 docker_stats.egg-info/
+*.pyc
