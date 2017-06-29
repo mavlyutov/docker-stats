@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
 import argparse
-import docker
 import json
+
+import docker
+try:
+    docker_client = docker.Client
+except AttributeError:
+    docker_client = docker.APIClient
+
 
 from operator import itemgetter
 
@@ -38,7 +44,7 @@ def main():
         parser.print_usage()
         parser.exit()
 
-    client = docker.Client(base_url='unix://var/run/docker.sock')
+    client = docker_client(base_url='unix://var/run/docker.sock')
     ids = args.all and map(itemgetter('Id'), client.containers(quiet=True)) or args.containers
 
     stats = {c: client.stats(c, stream=0) for c in ids}
